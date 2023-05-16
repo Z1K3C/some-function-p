@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node test/local.js"
   },
   "author": "Colby Fayock <hello@colbyfayock.com>",
   "license": "MIT",
   "dependencies": {
     "@sparticuz/chromium": "^106.0.0",
     "puppeteer-core": "^18.1.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
   }
 }
