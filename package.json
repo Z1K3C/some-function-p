@@ -9,7 +9,7 @@
   "author": "Colby Fayock <hello@colbyfayock.com>",
   "license": "MIT",
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
-    "puppeteer-core": "^10.2.0"
+    "@sparticuz/chromium": "^106.0.0",
+    "puppeteer-core": "^18.1.0"
   }
 }
