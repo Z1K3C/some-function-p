@@ -1,4 +1,6 @@
-const { handler } = require('../functions/blog-posts');
+require('dotenv').config()
+
+const { handler } = require('../functions/refresh-validator');
 
 const main = async () => {
   try {
