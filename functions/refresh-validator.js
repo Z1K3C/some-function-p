@@ -44,6 +44,4 @@ const refreshValidator = async function(event, context) {
   };
 };
 
-// exports.local = refreshValidator;
-
-exports.handler = schedule('*/5 * * * *', refreshValidator);
+exports.handler = schedule('0 */6 * * *', refreshValidator);
