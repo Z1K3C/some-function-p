@@ -1,9 +1,12 @@
+const { schedule } = require("@netlify/functions");
 const axios = require('axios').default;
+const cron = require('cron-validator');
+
+const externalCronInterval = process.env.INSTAGRAM_CRON_INTERVAL || '';
+const cronInterval = cron.isValidCron(externalCronInterval) ? externalCronInterval : '@monthly';
 
 const refreshValidator = async function(event, context) {
   try {
-    console.log("Received event:", event);
-
     const access_token = process.env.INSTAGRAM_ACCESS_TOKEN;
 
     if (!(access_token && access_token.length > 0)) {
@@ -44,4 +47,4 @@ const refreshValidator = async function(event, context) {
   };
 };
 
-exports.handler = refreshValidator;
+exports.handler = schedule(cronInterval, refreshValidator);

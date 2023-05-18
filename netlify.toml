@@ -1,5 +1,0 @@
-[build]
-  functions = "functions"
-
-[functions."refresh-validator"]
-  schedule = "*/15 * * * *"
