@@ -3,7 +3,7 @@ const axios = require('axios').default;
 const cron = require('cron-validator');
 
 const externalCronInterval = process.env.INSTAGRAM_CRON_INTERVAL || '';
-const cronInterval = cron.isValidCron(externalCronInterval) ? externalCronInterval : '@monthly';
+const cronInterval = cron.isValidCron(externalCronInterval) && externalCronInterval;
 
 const refreshValidator = async function(event, context) {
   try {
@@ -47,4 +47,4 @@ const refreshValidator = async function(event, context) {
   };
 };
 
-exports.handler = schedule(cronInterval, refreshValidator);
+exports.handler = schedule(cronInterval || '@monthly', refreshValidator);
