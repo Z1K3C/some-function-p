@@ -1,5 +1,5 @@
 {
-  "name": "get-blog-post-function",
+  "name": "refresh-validator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,6 @@
   "author": "Colby Fayock <hello@colbyfayock.com>",
   "license": "MIT",
   "dependencies": {
-    "@netlify/functions": "^1.6.0",
     "axios": "^0.19.0"
   },
   "devDependencies": {
