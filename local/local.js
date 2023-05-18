@@ -1,10 +1,10 @@
 require('dotenv').config()
 
-const { handler } = require('../functions/refresh-validator');
+const { local } = require('../functions/refresh-validator');
 
 const main = async () => {
   try {
-    const data = await handler();
+    const data = await local();
     const parse = JSON.parse(data.body);
     // console.log(11, parse);
   } catch (error) {
