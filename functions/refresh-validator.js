@@ -25,6 +25,7 @@ const refreshValidator = async function(event, context) {
     }
 
     const expires_in_days = (expires_in / (60 * 60 * 24)).toFixed(2);
+    console.log(200, { 200: response.data });
 
     return {
       statusCode: 200,
@@ -35,7 +36,7 @@ const refreshValidator = async function(event, context) {
       }),
     };
   } catch (error) {
-    console.log(500, error);
+    console.log(500, { 500: error });
     return {
       statusCode: 500,
       body: JSON.stringify({ note: error.message, error: String(error) }),
