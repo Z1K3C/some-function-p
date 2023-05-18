@@ -23,17 +23,18 @@ const refreshValidator = async function(event, context) {
       throw new Error("Something was wrong")
     }
 
-    const expires_in_days = (expires_in / (60 * 60 * 24)).toFixed(2);
-    console.log(200, { 200: response.data });
+    const expires_in_days = (expires_in / (60 * 60 * 24)).toFixed(2)
+    const body = {
+      note: "Ok",
+      expires_in,
+      expires_in_days,
+    }
 
+    console.log({ 200: { ...response.data, ...body } })
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        note: 'Ok',
-        expires_in,
-        expires_in_days,
-      }),
-    };
+      body: JSON.stringify(body),
+    }
   } catch (error) {
     console.log(500, { 500: error });
     return {
