@@ -2,4 +2,4 @@
   functions = "functions"
 
 [functions."refresh-validator"]
-  schedule = "@hourly"
+  schedule = "15 * * * *"
